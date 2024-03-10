@@ -1,4 +1,4 @@
-# FLT_Assignment4
+# FLT_Assignment3
 
 Name : Adil Aman Mohammed
 Course : Formal language theory
