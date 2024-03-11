@@ -5,7 +5,6 @@ Assignment no: 3
 CWID : A20395630
 Description: the below code is an implementation of taking input CFG and applying 2 algorithms (unproductive removal, unreachable removal)
 """
-
 import sys
 
 #This function reads the CFG from a file and returns three sets: 
