@@ -1,0 +1,623 @@
+Script started on 2024-03-11 16:05:29+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="150" LINES="10"]
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py I[K
+.git/       README.txt  input.txt   input1.txt  input2.txt  input3.txt  input4.txt  input5.txt  input6.txt  log1.txt    main.py     output.txt
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py I[Kinput.txt output.txt [K
+  File "/workspaces/FLT3/main.py", line 166
+    if len(sys.argv) !.= 3:
+                     ^
+SyntaxError: invalid syntax
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+Traceback (most recent call last):
+  File "/workspaces/FLT3/main.py", line 173, in <module>
+    printf("")
+NameError: name 'printf' is not defined. Did you mean: 'print'?
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+  File "/workspaces/FLT3/main.py", line 174
+    CFG_Grammar, terminals_list, non_terminals_list = function_parse_ grammar(input_file_path)
+                                                                      ^^^^^^^
+SyntaxError: invalid syntax
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+  File "/workspaces/FLT3/main.py", line 174
+    CFG_Grammar, terminals_list, non _terminals_list = function_parse_grammar(input_file_path)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+  File "/workspaces/FLT3/main.py", line 174
+    CFG_Grammar, termina ls_list, non _terminals_list = function_parse_grammar(input_file_path)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt\\\[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+Usage error: format is: python script_name.py input_file output_file
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt
+Usage error: format is: python script_name.py input_file output_file
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<C>'), ('<A>', '<B>')}, '<A>': {(), ('a', '<A>', 'b')}, '<B>': {('a', '<A>')}, '<C>': {('b', '<C>', 'a')}, '<D>': {('<A>', '<B>')}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<D>', '<C>', '<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input.txt output.txt[C[C[C[C[1@1
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt[1P[1@2
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'd', 'b', 'a'} 
+non terminals :
+ {'<S>', '<A>', '<C>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt[C[1P[1@3
+CFG :
+ {'<S>': {('<A>', '<B>')}, '<A>': {('y',), ('x',)}, '<C>': {('z',)}} 
+terminals :
+ {'y', 'z', 'x'} 
+non terminals :
+ {'<S>', '<C>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input3.txt output.txt[1P[1@4
+CFG :
+ {'<S>': {('a', '<T>', 'a')}, '<T>': {('<A>', '<B>', '<C>')}, '<A>': {('<C>',), ('a', '<A>')}, '<B>': {('<B>', 'b'), ('<C>',)}, '<C>': {('c',), ()}} 
+terminals :
+ {'c', 'b', 'a'} 
+non terminals :
+ {'<T>', '<A>', '<C>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input4.txt output.txt[1P[1@5
+CFG :
+ {'<expression>': {('(', '<expression>', ')'), ('<expression>', '+', '<expression>'), ('id',)}} 
+terminals :
+ {'id', ')', '(', '+'} 
+non terminals :
+ {'<expression>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input5.txt output.txt[1P[1@6
+CFG :
+ {'<S>': {(), ('a', '<S>', 'b')}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input6.txt output.txt[C[1P[1@4
+CFG :
+ {'<S>': {('a', '<T>', 'a')}, '<T>': {('<A>', '<B>', '<C>')}, '<A>': {('<C>',), ('a', '<A>')}, '<B>': {('<B>', 'b'), ('<C>',)}, '<C>': {(), ('c',)}} 
+terminals :
+ {'a', 'c', 'b'} 
+non terminals :
+ {'<B>', '<A>', '<C>', '<S>', '<T>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input4.txt output.txt[C[1P[1@3
+CFG :
+ {'<S>': {('<A>', '<B>')}, '<A>': {('y',), ('x',)}, '<C>': {('z',)}} 
+terminals :
+ {'x', 'y', 'z'} 
+non terminals :
+ {'<C>', '<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input3.txt output.txt[1P[1@5
+CFG :
+ {'<expression>': {('<expression>', '+', '<expression>'), ('id',), ('(', '<expression>', ')')}} 
+terminals :
+ {'(', ')', 'id', '+'} 
+non terminals :
+ {'<expression>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input5.txt output.txt[Kpython3 main.py input5.txt output.txt[C[C[1P[1@2
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'b', 'a', 'd'} 
+non terminals :
+ {'<S>', '<A>', '<C>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt[1P[1@1
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'a', 'c', 'd', 'b'} 
+non terminals :
+ {'<C>', '<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'b', 'a', 'c', 'd'} 
+non terminals :
+ {'<A>', '<C>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'c', 'a', 'b'} 
+non terminals :
+ {'<C>', '<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'a', 'd', 'b', 'c'} 
+non terminals :
+ {'<S>', '<B>', '<C>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'b', 'd', 'a', 'c'} 
+non terminals :
+ {'<C>', '<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'a', 'd', 'c', 'b'} 
+non terminals :
+ {'<B>', '<A>', '<S>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'a', 'd', 'b'} 
+non terminals :
+ {'<S>', '<C>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'a', 'b', 'd'} 
+non terminals :
+ {'<A>', '<S>', '<B>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'c', 'a', 'b'} 
+non terminals :
+ {'<A>', '<B>', '<C>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'b', 'c', 'a'} 
+non terminals :
+ {'<B>', '<C>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+^[[ACFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'b', 'a', 'd', 'c'} 
+non terminals :
+ {'<S>', '<A>', '<B>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'd', 'b', 'a'} 
+non terminals :
+ {'<C>', '<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'b', 'c', 'a', 'd'} 
+non terminals :
+ {'<C>', '<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'c', 'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<C>', '<A>'} 
+
+^[[A[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'a', 'c', 'b', 'd'} 
+non terminals :
+ {'<A>', '<C>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'a', 'b', 'd', 'c'} 
+non terminals :
+ {'<B>', '<A>', '<S>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'b', 'd', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'b', 'c', 'a'} 
+non terminals :
+ {'<C>', '<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'c', 'a', 'b'} 
+non terminals :
+ {'<C>', '<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'a', 'b', 'd'} 
+non terminals :
+ {'<A>', '<B>', '<S>', '<C>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'c', 'a', 'b'} 
+non terminals :
+ {'<S>', '<B>', '<C>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'd', 'b', 'a'} 
+non terminals :
+ {'<C>', '<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ 
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ 
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ 
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+^[[ACFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<S>', '<B>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<S>', '<A>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<expression>': {('<expression>', '+', '<expression>'), ('id',), ('(', '<expression>', ')')}} 
+terminals :
+ {')', '+', 'id', '('} 
+non terminals :
+ {'<expression>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ 
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ 
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input5.txt output.txt1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'d', 'b', 'c', 'a'} 
+non terminals :
+ {'<C>', '<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.txt5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt output.txt2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+CFG :
+ {'<expression>': {('<expression>', '+', '<expression>'), ('id',), ('(', '<expression>', ')')}} 
+terminals :
+ {'id', ')', '+', '('} 
+non terminals :
+ {'<expression>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input5.txt output.txt1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+CFG :
+ {'<S>': {('b',), ('<A>',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'b', 'd', 'a', 'c'} 
+non terminals :
+ {'<B>', '<S>', '<C>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.tx[K[K[K
+CFG :
+ {'<S>': {('<A>',), ('b',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('c', '<C>')}, '<C>': {('d',)}} 
+terminals :
+ {'c', 'b', 'd', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<C>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input2.txt output.tx5.txt output.txt1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pt.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a', '<A>'), ('a',)}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt outpt.txtut.txt[1P[1@r
+Traceback (most recent call last):
+  File "/workspaces/FLT3/main.py", line 174, in <module>
+    CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
+  File "/workspaces/FLT3/main.py", line 18, in function_parse_grammar
+    with open(file_path, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'inprt1.txt'
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py inprt1.txt output.txt
+Traceback (most recent call last):
+  File "/workspaces/FLT3/main.py", line 174, in <module>
+    CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
+  File "/workspaces/FLT3/main.py", line 18, in function_parse_grammar
+    with open(file_path, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'inprt1.txt'
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py inprt1.txt output.txt[1Put1.txt outpt.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt outpt.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<B>', '<S>', '<A>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt outpt.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<A>', '<B>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt outpt.txtrt1.txt output.txt
+Traceback (most recent call last):
+  File "/workspaces/FLT3/main.py", line 174, in <module>
+    CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
+  File "/workspaces/FLT3/main.py", line 18, in function_parse_grammar
+    with open(file_path, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'inprt1.txt'
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py inprt1.txt output.txt[1Put1.txt outpt.txt
+CFG :
+ {'<S>': {('a',), ('<A>', '<B>')}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'a', 'b'} 
+non terminals :
+ {'<B>', '<A>', '<S>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py input1.txt outpt.txt[1P[1@5
+Traceback (most recent call last):
+  File "/workspaces/FLT3/main.py", line 174, in <module>
+    CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
+  File "/workspaces/FLT3/main.py", line 18, in function_parse_grammar
+    with open(file_path, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'inpu51.txt'
+[0;32m@adilamanm01 [1;31m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ python3 main.py inpu51.txt outpt.txtt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crt1.txt output.txt[1Put1.txt outpt.txt
+CFG :
+ {'<S>': {('<A>', '<B>'), ('a',)}, '<A>': {('a',), ('a', '<A>')}, '<B>': {('b',)}} 
+terminals :
+ {'b', 'a'} 
+non terminals :
+ {'<A>', '<S>', '<B>'} 
+
+[0;32m@adilamanm01 [0m➜ [1;34m/workspaces/FLT3 [0;36m([1;31mmain[0;36m) [0m$ exit
+
+Script done on 2024-03-11 16:14:26+00:00 [COMMAND_EXIT_CODE="0"]
