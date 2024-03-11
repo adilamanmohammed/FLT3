@@ -1,9 +1,9 @@
 """
 Name : Adil Aman Mohammed
 Course : Formal language theory
-Assignment no: 4
+Assignment no: 3
 CWID : A20395630
-Description: the below code is an implementation of taking input CFG and applying 3 algorithms (epsilon-removal, unproductive removal, unreachable removal)
+Description: the below code is an implementation of taking input CFG and applying 2 algorithms (unproductive removal, unreachable removal)
 """
 
 import sys
@@ -12,39 +12,53 @@ import sys
 #the CFG itself, the set of terminal symbols, and the set of non-terminal symbols.
 
 def function_parse_grammar(file_path):
-    
-    CFG_Grammar = {}  #the following dictionary will store the CFG
-    terminals_list = set() #the following set will store all the terminal symbols.
-    non_terminals_list = set()  #the following set will store all the non-terminal symbols.
+    CFG_Grammar = {}  # The following dictionary will store the CFG
+    terminals_list = set()  # The following set will store all the terminal symbols.
+    non_terminals_list = set()  # The following set will store all the non-terminal symbols.
 
     with open(file_path, 'r') as file:
-        for line in file:
-            line = line.strip()  #removing the leading and trailing whitespaces.
+        file_content = file.read().strip()  # Read the entire file content and strip leading/trailing whitespaces
+
+        if not file_content:
+            print("Empty file")
+            exit(1)  # Exit the program indicating an error
+
+        for line in file_content.split('\n'):
+            line = line.strip()
             if line:
-                #splitting the line into the left-hand side and right-hand side of the production.
                 LHS, RHS = line.split("::=")
                 LHS = LHS.strip()
-                #splitting the RHS into symbols and strip whitespaces from each symbol.
-                RHS = tuple(symbol.strip() for symbol in RHS.split() if symbol.strip())
 
+                # New rule: Check for the "><" pattern in RHS
+                if "><" in RHS:
+                    print("Space error: Non-terminal symbols must be separated by spaces.")
+                    exit(1)
+
+                RHS_symbols = RHS.split()
+
+                for symbol in RHS_symbols:
+                    if symbol.startswith("<") and symbol.endswith(">"):
+                        non_terminals_list.add(symbol)
+                    elif not symbol.startswith("<") and not symbol.endswith(">"):
+                        terminals_list.add(symbol)
+                    else:
+                        print("Symbols must be properly classified and separated by spaces")
+                        exit(1)
+
+                RHS = tuple(symbol.strip() for symbol in RHS_symbols if symbol.strip())
                 non_terminals_list.add(LHS)
                 for symbol in RHS:
                     if symbol.startswith("<") and symbol.endswith(">"):
-                        #if the symbol is surrounded by '<>', it's a non-terminal.
                         non_terminals_list.add(symbol)
                     else:
-                        # Otherwise, it's a terminal.
                         terminals_list.add(symbol)
 
-                #Adding the production to the CFG. If LHS is already a key in CFG_Grammar,adding RHS to its value set.
-                # Otherwise, create a new entry in CFG_Grammar with LHS as the key and a set containing RHS as the value.
                 if LHS in CFG_Grammar:
                     CFG_Grammar[LHS].add(RHS)
                 else:
                     CFG_Grammar[LHS] = {RHS}
 
     return CFG_Grammar, terminals_list, non_terminals_list
-
 
 
 #the following function finds the set of nullable non-terminals in the CFG.
@@ -148,7 +162,7 @@ def function_remove_unproductive(CFG_Grammar, terminals_list, non_terminals_list
 
 def function_remove_unreachable_character(CFG_Grammar, start_char):
     """
-   the following functionremoving thes unreachable non-terminals and productions from the CFG.
+   the following function removing thes unreachable non-terminals and productions from the CFG.
     A non-terminal is unreachable if it cannot be derived from the start symbol.
     """
     reachable_char_set = {start_char}
@@ -179,6 +193,7 @@ if __name__ == "__main__":
     input_file_path = sys.argv[1]
     output_file_path = sys.argv[2]
     CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
+    # print("CFG :\n",CFG_Grammar,"\nterminals :\n",terminals_list, "\nnon terminals :\n",non_terminals_list,"\n")
     start_char = next(iter(CFG_Grammar))
 
     #removing the unproductive non-terminals and productions.
@@ -186,7 +201,7 @@ if __name__ == "__main__":
     #removing the unreachable non-terminals and productions.
     reachable_CFG_Grammar, reachable_char_set = function_remove_unreachable_character(productive_CFG_Grammar, start_char)
     #removing the ε-productions.
-    final_CFG_Grammar, final_non_terminals_list, final_start_char = function_eps_remo(reachable_CFG_Grammar, reachable_char_set, start_char)
+    final_CFG_Grammar, final_non_terminals_list, final_start_char = reachable_CFG_Grammar, reachable_char_set, start_char
 
     #displaying and store the final CFG.
     with open(output_file_path, 'w') as output_file:
