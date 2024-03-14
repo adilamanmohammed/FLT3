@@ -60,75 +60,6 @@ def function_parse_grammar(file_path):
     return CFG_Grammar, terminals_list, non_terminals_list
 
 
-#the following function finds the set of nullable non-terminals in the CFG.
-#A non-terminal is nullable if it can derive the empty string.
-
-def Finding_nullable_var_set(CFG_Grammar, non_terminals_list):
-    
-    nullable_var_set = set()
-    # initially,adding to nullable_var_set all non-terminals that have an ε-production.
-    for non_terminal, productions in CFG_Grammar.items():
-        if ('ε',) in productions or () in productions:
-            nullable_var_set.add(non_terminal)
-
-    #kEep iterating until no more Changes are made.
-    CHANGED_FLAG = True
-    while CHANGED_FLAG:
-        CHANGED_FLAG = False
-        for non_terminal in non_terminals_list:
-            if non_terminal not in nullable_var_set:
-                for production in CFG_Grammar.get(non_terminal, set()):
-                    # If all symbols in a production are nullable or ε,adding the non-terminal to nullable_var_set.
-                    if all(symbol in nullable_var_set or symbol == 'ε' for symbol in production):
-                        nullable_var_set.add(non_terminal)
-                        CHANGED_FLAG = True
-                        break
-
-    return nullable_var_set
-
-
-
-"""
-   the following functionadds new productions to the CFG to account for the nullability of non-terminals.
-    For each production that contains a nullable non-terminal, new productions areaddinged for each possible way
-    of omitting the nullable non-terminals.
-"""
-def function_add_nullable_productions(CFG_Grammar, nullable_var_set):
-   
-    new_CFG_Grammar = {k: {tuple(prod) for prod in v} for k, v in CFG_Grammar.items()}
-    for non_terminal, productions in CFG_Grammar.items():
-        for production in productions:
-            if any(symbol in nullable_var_set for symbol in production):
-                new_prods = [production]
-                # For each nullable symbol in the production,adding new productions with the symbol omitted.
-                for symbol in production:
-                    if symbol in nullable_var_set:
-                        new_prods = [prod[:i] + prod[i + 1:] for prod in new_prods for i in range(len(prod)) if prod[i] == symbol] + new_prods
-                new_CFG_Grammar[non_terminal].update(tuple(prod) for prod in new_prods)
-    return new_CFG_Grammar
-
-
-#the following functionremoving thes ε-productions from the CFG.
-def function_eps_remo(CFG_Grammar, non_terminals_list, start_char):
-
-    nullable_var_set = Finding_nullable_var_set(CFG_Grammar, non_terminals_list)
-    CFG_Grammar = function_add_nullable_productions(CFG_Grammar, nullable_var_set)
-    new_CFG_Grammar = {k: {tuple(prod) for prod in v} for k, v in CFG_Grammar.items()}
-
-    #removing the ε-productions from the grammar.
-    for non_terminal in non_terminals_list:
-        if non_terminal in new_CFG_Grammar:
-            new_CFG_Grammar[non_terminal] = {production for production in new_CFG_Grammar[non_terminal] if production != ('ε',) and production != ()}
-
-    #if the start symbol is nullable,adding a new start symbol with an ε-production and a production to the old start symbol.
-    if start_char in nullable_var_set:
-        new_start_char = "<" + start_char[1:-1] + "1>"
-        new_CFG_Grammar[new_start_char] = {('',), (start_char,)}
-        non_terminals_list.add(new_start_char)
-        start_char = new_start_char
-
-    return new_CFG_Grammar, non_terminals_list, start_char
-
 def function_remove_unproductive(CFG_Grammar, terminals_list, non_terminals_list):
     """
    the following functionremoving thes unproductive non-terminals and productions from the CFG.
@@ -189,19 +120,23 @@ if __name__ == "__main__":
         print("Usage error: format is: python script_name.py input_file output_file")
         sys.exit(1)
 
+
     input_file_path = sys.argv[1]
     output_file_path = sys.argv[2]
+    
     CFG_Grammar, terminals_list, non_terminals_list = function_parse_grammar(input_file_path)
-    # print("CFG :\n",CFG_Grammar,"\nterminals :\n",terminals_list, "\nnon terminals :\n",non_terminals_list,"\n")
+    # print("CFG :\n",CFG_Grammar,"\nterminals :\n",terminals_list, "\nnon terminals :\n",non_terminals_list,"\n",end="")
     start_char = next(iter(CFG_Grammar))
 
     #removing the unproductive non-terminals and productions.
     productive_CFG_Grammar, productive_terminals_list, productive_non_terminals_list = function_remove_unproductive(CFG_Grammar, terminals_list, non_terminals_list)
+    # print("CFG :\n",productive_CFG_Grammar,"\nterminals :\n",productive_terminals_list, "\nnon terminals :\n",productive_non_terminals_list,"\n",end=" ")
     #removing the unreachable non-terminals and productions.
     reachable_CFG_Grammar, reachable_char_set = function_remove_unreachable_character(productive_CFG_Grammar, start_char)
-    #removing the ε-productions.
+    # print("CFG\n",reachable_CFG_Grammar,"\nstart symbol\n",start_char)
+    # Final CFG
     final_CFG_Grammar, final_non_terminals_list, final_start_char = reachable_CFG_Grammar, reachable_char_set, start_char
-
+    # print("Final CFG :\n",final_CFG_Grammar,"\nfinal non terminals :\n",final_non_terminals_list, "\nfinal terminals :\n",productive_terminals_list,"\n",end=" ")
     #displaying and store the final CFG.
     with open(output_file_path, 'w') as output_file:
         for non_terminal in sorted(final_non_terminals_list):
