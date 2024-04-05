@@ -6,6 +6,7 @@ CWID : A20395630
 Description: the below code is an implementation of taking input CFG and applying 2 algorithms (unproductive removal, unreachable removal)
 """
 import sys
+
 #This function reads the CFG from a file and returns three sets: 
 #the CFG itself, the set of terminal symbols, and the set of non-terminal symbols.
 
@@ -89,6 +90,7 @@ def function_remove_unproductive(CFG_Grammar, terminals_list, non_terminals_list
 
     return productive_CFG_Grammar, terminals_list, productive_char_set
 
+# The following function is used to remove un reachable
 def function_remove_unreachable_character(CFG_Grammar, start_char):
     """
    the following function removing thes unreachable non-terminals and productions from the CFG.
@@ -137,10 +139,35 @@ if __name__ == "__main__":
     final_CFG_Grammar, final_non_terminals_list, final_start_char = reachable_CFG_Grammar, reachable_char_set, start_char
     # print("Final CFG :\n",final_CFG_Grammar,"\nfinal non terminals :\n",final_non_terminals_list, "\nfinal terminals :\n",productive_terminals_list,"\n",end=" ")
     #displaying and store the final CFG.
-    with open(output_file_path, 'w') as output_file:
-        for non_terminal in sorted(final_non_terminals_list):
-            if non_terminal in final_CFG_Grammar:
-                for production in sorted(final_CFG_Grammar[non_terminal], key=lambda x: ' '.join(x)):
-                    production_str = f"{non_terminal} ::= {' '.join(production)}"
-                    print(production_str)  #displaying to console
-                    output_file.write(production_str + '\n')  #writting to the output file
+
+    # with open(output_file_path, 'w') as output_file:
+    #     for non_terminal in sorted(final_non_terminals_list):
+    #         if non_terminal in final_CFG_Grammar:
+    #             for production in sorted(final_CFG_Grammar[non_terminal], key=lambda x: ' '.join(x)):
+    #                 production_str = f"{non_terminal} ::= {' '.join(production)}"
+    #                 print(production_str)  #displaying to console
+    #                 output_file.write(production_str + '\n')  #writting to the output file
+
+    # with open(output_file_path, 'w') as output_file:
+    #     for non_terminal in final_non_terminals_list:  # Iterating without sorting
+    #         if non_terminal in final_CFG_Grammar:
+    #             for production in final_CFG_Grammar[non_terminal]:  # Accessing productions directly
+    #                 production_str = f"{non_terminal} ::= {' '.join(production)}"
+    #                 print(production_str)  # Displaying to console
+    #                 output_file.write(production_str + '\n')  # Writing to the output file
+
+with open(output_file_path, 'w') as output_file:
+    # First, write the productions for the start symbol "S"
+    if final_start_char in final_CFG_Grammar:
+        for production in final_CFG_Grammar[final_start_char]:
+            production_str = f"{final_start_char} ::= {' '.join(production)}"
+            print(production_str)  # Displaying to console
+            output_file.write(production_str + '\n')  # Writing to the output file
+
+    # Then, write the productions for the rest of the non-terminals, excluding "S"
+    for non_terminal in final_non_terminals_list:
+        if non_terminal != final_start_char and non_terminal in final_CFG_Grammar:
+            for production in final_CFG_Grammar[non_terminal]:
+                production_str = f"{non_terminal} ::= {' '.join(production)}"
+                print(production_str)  # Displaying to console
+                output_file.write(production_str + '\n')  # Writing to the output file
